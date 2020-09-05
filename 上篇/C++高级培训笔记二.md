@@ -1,4 +1,4 @@
-## 1.拷贝赋值函数 ##
+## 1.拷贝赋值函数
 ![](https://i.imgur.com/B6W7jnL.png)
 
 如上图所示，在重载“=”赋值运算符时需要检查自我赋值，原因如下：
@@ -7,15 +7,15 @@
 
 如果没有自我赋值检测，那么自身对象的m_data将被释放，m_data指向的内容将不存在，所以该拷贝会出问题。
 
-## 2.探索new操作 ##
+## 2.探索new操作 
 ![](https://i.imgur.com/CoqboeP.png)
 
-## 3.探索delete操作 ##
+## 3.探索delete操作 
 ![](https://i.imgur.com/LF05Wt3.png)
 
-## 4.探索创建对象的内存分配情况 ##
+## 4.探索创建对象的内存分配情况 
 这里以两个类做出说明：
-
+```cpp
 	class complex
 	{
 		public:
@@ -43,7 +43,7 @@
 		private:
 			char* m_data;
 	};
-
+```
 创建这两个对象后，编译器(VC)给两个对象分配内存如下：
 ![](https://i.imgur.com/1Ud7vVP.png)
 
@@ -61,7 +61,7 @@
 ## 5.String类
 
 String.h
-
+```cpp
 	#ifndef __MYSTRING__
 	#define __MYSTRING__
 	
@@ -127,9 +127,9 @@ String.h
 	}
 	
 	#endif
-
+```
 string_test.cpp
-
+```cpp
 	#include "string.h"
 	#include <iostream>
 	
@@ -148,3 +148,5 @@ string_test.cpp
 	  cout << s2 << endl;  
 	  cout << s1 << endl;      
 	}
+```language
+```
